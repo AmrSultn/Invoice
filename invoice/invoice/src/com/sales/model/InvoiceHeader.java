@@ -40,9 +40,21 @@ public class InvoiceHeader {
         this.customer = customer;
     }
     
-    public void setline(ArrayList<InvoiceLine>line){
-        this.lines=line;
+    public ArrayList<InvoiceLine> getLines() {
+        if (lines == null) {
+            lines = new ArrayList<>();
+        }
+        return lines;
+    }
+    public void setline(ArrayList<InvoiceLine>InvoiceLine){
+        this.lines=InvoiceLine;
         
+    
+    }
+
+    @Override
+    public String toString() {
+        return "InvoiceHeader{" + "num=" + num + ", customer=" + customer + ", invoiceDate=" + invoiceDate + '}';
     }
     
     public double getInvoiceTotal(){
@@ -55,4 +67,6 @@ public class InvoiceHeader {
             
     
 }
+
+   
 }

@@ -19,6 +19,13 @@ public class InvoiceLine {
     public InvoiceLine() {
     }
 
+    public InvoiceLine(String str4, double price, int count, InvoiceHeader inv) {
+        this.item=str4;
+        this.price=price;
+        this.count=count;
+        this.header=inv;
+    }
+
     public int getInvum() {
         return invum;
     }
@@ -61,5 +68,10 @@ public class InvoiceLine {
     public double getLineTotal(){
         return price * count;
     }
+
+    @Override
+    public String toString() {
+        return "InvoiceLine {" + "invum=" + invum + ", item=" + item + ", price=" + price + ", count=" + count + ", header=" + header + "}";
+    } 
     
 }
